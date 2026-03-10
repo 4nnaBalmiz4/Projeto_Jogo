@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dok06i0dxfpx4"]
+
+[ext_resource type="Script" uid="uid://3s7rgn7xoe1v" path="res://node_2d.gd" id="1_x865p"]
+[ext_resource type="Texture2D" uid="uid://cu246weq7rkgw" path="res://assets/carimbo1.png" id="2_ly0gx"]
+[ext_resource type="Texture2D" uid="uid://b77tughtdwfr7" path="res://assets/carimbo2.png" id="3_uxsjn"]
+[ext_resource type="Texture2D" uid="uid://ckclfipns32xd" path="res://assets/carimbo3.png" id="4_ydilx"]
+[ext_resource type="Texture2D" uid="uid://6an8u65ow71k" path="res://assets/carimbo4.png" id="5_0k0pn"]
+[ext_resource type="Texture2D" uid="uid://dml41h7gq7w2x" path="res://assets/carimbo5.png" id="6_tg420"]
+[ext_resource type="Texture2D" uid="uid://b6ilfpt1aotro" path="res://assets/carimbo6.png" id="7_qsk4y"]
+
+[sub_resource type="Animation" id="Animation_gtv50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ly0gx")]
+}
+
+[sub_resource type="Animation" id="Animation_5b70q"]
+resource_name = "anim_aviso"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_ly0gx"), ExtResource("3_uxsjn"), ExtResource("4_ydilx"), ExtResource("5_0k0pn"), ExtResource("6_tg420"), ExtResource("7_qsk4y")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_onj20"]
+_data = {
+&"RESET": SubResource("Animation_gtv50"),
+&"anim_aviso": SubResource("Animation_5b70q")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1971489970]
+script = ExtResource("1_x865p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1108182525]
+position = Vector2(576, 323.99997)
+scale = Vector2(1.0588236, 1.0093457)
+texture = ExtResource("2_ly0gx")
+
+[node name="Button" type="Button" parent="Sprite2D" unique_id=1828774748]
+offset_left = -26.444433
+offset_top = 242.73154
+offset_right = 56.555565
+offset_bottom = 273.73154
+text = "AVANÇAR"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1498132205]
+libraries/ = SubResource("AnimationLibrary_onj20")
+
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]

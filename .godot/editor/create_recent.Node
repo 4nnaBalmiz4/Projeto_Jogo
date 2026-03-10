@@ -1,0 +1,8 @@
+TextureRect
+Button
+AudioStreamPlayer
+AnimationPlayer
+Sprite2D
+Label
+Control
+RichTextLabel

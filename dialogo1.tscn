@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bu2eq511b1ysy"]
+
+[ext_resource type="Script" uid="uid://df7t3omnlpr4m" path="res://dialogo_1.gd" id="1_glt8w"]
+[ext_resource type="Texture2D" uid="uid://bme84t2ybv6p6" path="res://assets/dialogo1.png" id="2_nmk23"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmvib"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="dialogo1" type="Control" unique_id=1473819348]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glt8w")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1240770703]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_nmk23")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=326406414]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 547.0
+offset_right = 1053.0
+offset_bottom = 601.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nmvib")
+text = "AVANÇAR >>"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

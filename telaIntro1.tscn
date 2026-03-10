@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://csv0j6lub0nrl"]
+
+[ext_resource type="Script" uid="uid://bwiwkd2dyy347" path="res://tela_intro_2.gd" id="1_dct0u"]
+[ext_resource type="Texture2D" uid="uid://d2uej8blorche" path="res://assets/monitor.png" id="2_pn756"]
+[ext_resource type="Script" uid="uid://d1ryqqhugh12l" path="res://textoIntro2.gd" id="3_vvqua"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgjhk"]
+bg_color = Color(0.75571465, 0, 0.029450726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv502"]
+bg_color = Color(1, 0.4566183, 0.39738762, 0.83137256)
+
+[node name="TelaIntro2" type="Control" unique_id=611681246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dct0u")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=274138433]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_pn756")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=1321945831]
+visible = false
+layout_mode = 0
+offset_left = 522.0
+offset_top = 411.0
+offset_right = 639.0
+offset_bottom = 438.0
+theme_override_colors/font_outline_color = Color(0.74509805, 0.07450981, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dgjhk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uv502")
+text = "INVESTIGAR"
+
+[node name="Label" type="Label" parent="." unique_id=2016932444]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 174.0
+offset_right = 758.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(0.0627451, 0.84705883, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "A BURGUER EXPRESS 
+SOFREU UM VAZAMENTO.
+CLIENTES ALEGAM QUE 
+NÃO SABIAM QUE SEUS
+DADOS ERAM COLETADOS
+DESSA FORMA."
+horizontal_alignment = 1
+script = ExtResource("3_vvqua")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
