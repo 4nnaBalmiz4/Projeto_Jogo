@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://s61420ablx7"]
+
+[ext_resource type="Script" uid="uid://cc4g0fwym5ngy" path="res://musica_global.gd" id="1_6or7s"]
+[ext_resource type="AudioStream" uid="uid://bmauv8o2s13ds" path="res://framesJogo/TrilhaSonoraJogo.mp3" id="2_6or7s"]
+
+[node name="musicaGlobal" type="Node" unique_id=1133986135]
+script = ExtResource("1_6or7s")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1767110464]
+stream = ExtResource("2_6or7s")
+volume_db = -34.8
+pitch_scale = 0.71
+autoplay = true

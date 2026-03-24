@@ -1,4 +1,7 @@
-AnimatedSprite2D
+AudioStreamPlayer
+Node
+TextureButton
 Button
 Sprite2D
+AnimatedSprite2D
 ShapeCast2D

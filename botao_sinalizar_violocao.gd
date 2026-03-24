@@ -16,3 +16,5 @@ func _on_pressed():
 	Global.vidas += 1        # ← incrementa a vida
 	Global.perdeu_vida = false
 	get_tree().change_scene_to_file("res://cena7.tscn")
+	if SomAcerto:
+		SomAcerto.tocar_acerto()

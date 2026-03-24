@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://qqapstx1noth"]
 
+[ext_resource type="Script" uid="uid://bu5u0e0vafxpa" path="res://cena_7.gd" id="1_2ccng"]
 [ext_resource type="Texture2D" uid="uid://co5hhrq2hiqia" path="res://framesJogo/frame8.1.png" id="1_15c8v"]
 [ext_resource type="Texture2D" uid="uid://cticgm1luc50k" path="res://framesJogo/frame8.2.png" id="2_ajiu3"]
 [ext_resource type="Texture2D" uid="uid://b28mlws8wrvsn" path="res://framesJogo/frame8.3.png" id="3_2ccng"]
@@ -8,9 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://d1a8aqfuoei4" path="res://framesJogo/frame8.5-1.png" id="6_a404i"]
 [ext_resource type="Texture2D" uid="uid://i578amus32el" path="res://framesJogo/frame9.png" id="7_5un7r"]
 [ext_resource type="Texture2D" uid="uid://dqx1i7ckb75kg" path="res://framesJogo/frame10.png" id="8_7exea"]
-[ext_resource type="Texture2D" uid="uid://doje76tftfco" path="res://framesJogo/frame12.png" id="9_2ccng"]
 [ext_resource type="Texture2D" uid="uid://or10b4ua1eu5" path="res://framesJogo/frame11.png" id="9_rsfqf"]
 [ext_resource type="Script" uid="uid://cf4dgb77p1dn4" path="res://animacao_final.gd" id="11_c1vj7"]
+[ext_resource type="Texture2D" uid="uid://bop2hv232fiet" path="res://framesJogo/botaoContinuar.png" id="12_c1vj7"]
+[ext_resource type="AudioStream" uid="uid://cbcynhyjov6us" path="res://framesJogo/carimbo.mp3" id="13_0fb7o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0fb7o"]
 animations = [{
@@ -21,16 +23,16 @@ animations = [{
 "duration": 1.5,
 "texture": ExtResource("2_ajiu3")
 }, {
-"duration": 1.5,
+"duration": 0.6,
 "texture": ExtResource("3_2ccng")
 }, {
-"duration": 1.5,
+"duration": 0.6,
 "texture": ExtResource("4_c1vj7")
 }, {
-"duration": 1.5,
+"duration": 0.6,
 "texture": ExtResource("5_0fb7o")
 }, {
-"duration": 2.5,
+"duration": 4.0,
 "texture": ExtResource("6_a404i")
 }, {
 "duration": 10.0,
@@ -39,11 +41,8 @@ animations = [{
 "duration": 10.0,
 "texture": ExtResource("8_7exea")
 }, {
-"duration": 10.0,
+"duration": 3.0,
 "texture": ExtResource("9_rsfqf")
-}, {
-"duration": 10.0,
-"texture": ExtResource("9_2ccng")
 }],
 "loop": false,
 "name": &"default",
@@ -51,11 +50,24 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=512714756]
+script = ExtResource("1_2ccng")
 
 [node name="animacaoFinal" type="AnimatedSprite2D" parent="." unique_id=1467818862]
 position = Vector2(579.625, 328.50003)
 scale = Vector2(1.667256, 1.5956938)
 sprite_frames = SubResource("SpriteFrames_0fb7o")
-frame = 9
+frame = 8
 frame_progress = 1.0
 script = ExtResource("11_c1vj7")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=123152888]
+offset_left = 871.99994
+offset_top = 519.0
+offset_right = 2152.0
+offset_bottom = 1027.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("12_c1vj7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=851290193]
+stream = ExtResource("13_0fb7o")
+volume_db = -22.612

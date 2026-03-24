@@ -1,20 +1,19 @@
-extends AnimatedSprite2D
-
-@onready var botao = $"../botaoContinuar"
+extends Button
 
 func _ready():
-	botao.visible = false
-	play("default")
-	frame_changed.connect(_on_frame_changed)
-	botao.pressed.connect(_on_botao_pressed)
+	# Começa invisível (alfa 0)
+	modulate.a = 0.0
+	
+	# Conecta os sinais
+	pressed.connect(_on_pressed)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
-func _on_frame_changed():
-	if frame == 5 or frame == 6 or frame == 7:
-		pause()
-		botao.visible = true
-	else:
-		botao.visible = false
+func _on_mouse_entered():
+	modulate.a = 1.0
 
-func _on_botao_pressed():
-	botao.visible = false
-	play("default")
+func _on_mouse_exited():
+	modulate.a = 0.0
+
+func _on_pressed():
+	get_tree().change_scene_to_file("res://cena5.tscn")

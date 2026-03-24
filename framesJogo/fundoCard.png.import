@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdkchhuyfl8g6"
-path="res://.godot/imported/frame7.png-93a2cda612c5bd89f192071c403322a2.ctex"
+uid="uid://d27s1bfh2waeb"
+path="res://.godot/imported/fundoCard.png-f2ef552cc2b16fdc87a21d27dd4bfcec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://framesJogo/frame7.png"
-dest_files=["res://.godot/imported/frame7.png-93a2cda612c5bd89f192071c403322a2.ctex"]
+source_file="res://framesJogo/fundoCard.png"
+dest_files=["res://.godot/imported/fundoCard.png-f2ef552cc2b16fdc87a21d27dd4bfcec.ctex"]
 
 [params]
 

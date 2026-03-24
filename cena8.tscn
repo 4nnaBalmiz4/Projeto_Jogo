@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d0drux2h5nplv"]
+
+[ext_resource type="Texture2D" uid="uid://d27s1bfh2waeb" path="res://framesJogo/fundoCard.png" id="1_j8y8w"]
+[ext_resource type="Script" uid="uid://b4v82j8vn8tq8" path="res://cena_8.gd" id="1_wldc3"]
+[ext_resource type="Texture2D" uid="uid://c5p3wuf8vjbn0" path="res://framesJogo/card1.png" id="2_7iar6"]
+[ext_resource type="Script" uid="uid://pm7dj6a13cc2" path="res://sprite_2d_2.gd" id="3_wldc3"]
+[ext_resource type="AudioStream" uid="uid://6ryrrfubvx4v" path="res://framesJogo/descoberta.mp3" id="5_88j85"]
+
+[node name="Node2D" type="Node2D" unique_id=257197493]
+script = ExtResource("1_wldc3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=838988280]
+position = Vector2(580, 326.75)
+scale = Vector2(1.1328125, 1.0711948)
+texture = ExtResource("1_j8y8w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1188318359]
+position = Vector2(582, 337)
+scale = Vector2(0.62892675, 0.62892675)
+texture = ExtResource("2_7iar6")
+script = ExtResource("3_wldc3")
+duracao = 4.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=474208696]
+stream = ExtResource("5_88j85")

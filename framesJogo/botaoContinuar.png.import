@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdkchhuyfl8g6"
-path="res://.godot/imported/frame7.png-93a2cda612c5bd89f192071c403322a2.ctex"
+uid="uid://bop2hv232fiet"
+path="res://.godot/imported/botaoContinuar.png-bc46175063d02f8655f4f133b4ba8ec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://framesJogo/frame7.png"
-dest_files=["res://.godot/imported/frame7.png-93a2cda612c5bd89f192071c403322a2.ctex"]
+source_file="res://framesJogo/botaoContinuar.png"
+dest_files=["res://.godot/imported/botaoContinuar.png-bc46175063d02f8655f4f133b4ba8ec2.ctex"]
 
 [params]
 

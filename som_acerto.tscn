@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c1oeit6dpnp04"]
+
+[ext_resource type="Script" uid="uid://cfsb175h0pbps" path="res://som_acerto.gd" id="1_88k0a"]
+[ext_resource type="AudioStream" uid="uid://dsj4agisldvpj" path="res://framesJogo/somCorrreto.mp3" id="2_nnnk2"]
+
+[node name="som_acerto" type="Node" unique_id=965532724]
+script = ExtResource("1_88k0a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2060294679]
+stream = ExtResource("2_nnnk2")

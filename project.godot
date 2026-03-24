@@ -18,6 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://cxbcev35oo4bi"
+MusicaGlobal="*uid://s61420ablx7"
+SomErro="*uid://c6s2w83prvjfe"
+SomAcerto="*uid://c1oeit6dpnp04"
 
 [physics]
 
