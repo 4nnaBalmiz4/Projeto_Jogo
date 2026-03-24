@@ -1,8 +1,4 @@
-TextureRect
+AnimatedSprite2D
 Button
-AudioStreamPlayer
-AnimationPlayer
 Sprite2D
-Label
-Control
-RichTextLabel
+ShapeCast2D

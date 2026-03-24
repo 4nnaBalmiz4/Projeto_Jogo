@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dsp48mkt2i0yw"]
+
+[ext_resource type="Script" uid="uid://b3pg75u1o2moe" path="res://cena_2.gd" id="1_ca7th"]
+[ext_resource type="Texture2D" uid="uid://51hirtqis8xe" path="res://framesJogo/frame6.png" id="1_kbkd5"]
+[ext_resource type="Script" uid="uid://us7442nhmiff" path="res://botao_comecar.gd" id="2_dem5k"]
+[ext_resource type="Script" uid="uid://h058nits2t7y" path="res://botao_ler_politica.gd" id="3_4fnnr"]
+[ext_resource type="Texture2D" uid="uid://cmijsr5wklke5" path="res://framesJogo/barraVidaCompleta 1.png" id="4_tparw"]
+
+[node name="Node2D" type="Node2D" unique_id=1545440598]
+script = ExtResource("1_ca7th")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=149296339]
+position = Vector2(578.25, 328)
+scale = Vector2(1.645686, 1.5789474)
+texture = ExtResource("1_kbkd5")
+
+[node name="botaoComecar" type="Button" parent="." unique_id=1170048246]
+offset_left = 506.0
+offset_top = 365.0
+offset_right = 673.0
+offset_bottom = 410.0
+script = ExtResource("2_dem5k")
+
+[node name="botaoLerPolitica" type="Button" parent="." unique_id=1493723112]
+offset_left = 530.0
+offset_top = 503.0
+offset_right = 643.0
+offset_bottom = 537.0
+script = ExtResource("3_4fnnr")
+
+[node name="barraVida" type="Sprite2D" parent="." unique_id=188229831]
+position = Vector2(996, 99)
+texture = ExtResource("4_tparw")
+
+[connection signal="mouse_entered" from="botaoComecar" to="botaoComecar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="botaoComecar" to="botaoComecar" method="_on_mouse_exited"]
+[connection signal="pressed" from="botaoComecar" to="botaoComecar" method="_on_pressed"]
+[connection signal="mouse_entered" from="botaoLerPolitica" to="botaoComecar" method="_on_botao_ler_politica_mouse_entered"]
+[connection signal="mouse_exited" from="botaoLerPolitica" to="botaoComecar" method="_on_botao_ler_politica_mouse_exited"]
+[connection signal="pressed" from="botaoLerPolitica" to="botaoComecar" method="_on_botao_ler_politica_pressed"]

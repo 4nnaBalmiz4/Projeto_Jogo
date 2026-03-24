@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cyacbyv888mnc"]
+
+[ext_resource type="Texture2D" uid="uid://c53bdt83brf7j" path="res://framesJogo/frame7.png" id="1_33dc5"]
+[ext_resource type="Script" uid="uid://cto4cwgdk7a3q" path="res://botao_fechar.gd" id="2_cpjch"]
+
+[node name="Node2D" type="Node2D" unique_id=2040504481]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=356032820]
+position = Vector2(578.25, 327.5)
+scale = Vector2(1.645686, 1.5622009)
+texture = ExtResource("1_33dc5")
+
+[node name="botaoFechar" type="Button" parent="." unique_id=1651586205]
+offset_left = 507.0
+offset_top = 446.0
+offset_right = 679.0
+offset_bottom = 494.0
+script = ExtResource("2_cpjch")
+
+[connection signal="mouse_entered" from="botaoFechar" to="botaoFechar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="botaoFechar" to="botaoFechar" method="_on_mouse_exited"]
+[connection signal="pressed" from="botaoFechar" to="botaoFechar" method="_on_pressed"]

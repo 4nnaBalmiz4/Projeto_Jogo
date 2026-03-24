@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ciev51x1ydp45"]
+
+[ext_resource type="Script" uid="uid://b7ykht42l1j67" path="res://cena_5.gd" id="1_aq161"]
+[ext_resource type="Texture2D" uid="uid://bsn3kspwjpqer" path="res://framesJogo/frame8.png" id="1_ivdc3"]
+[ext_resource type="Script" uid="uid://cn3k058rptb6s" path="res://botao_ignorar_eaprovar.gd" id="2_y4rkw"]
+[ext_resource type="Texture2D" uid="uid://cmijsr5wklke5" path="res://framesJogo/barraVidaCompleta 1.png" id="3_y4rkw"]
+[ext_resource type="Script" uid="uid://8a6gwh41inyc" path="res://botao_sinalizar_violocao.gd" id="5_cupu8"]
+
+[node name="Node2D" type="Node2D" unique_id=506028724]
+script = ExtResource("1_aq161")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=182007730]
+position = Vector2(577.75, 326.50003)
+scale = Vector2(1.6442716, 1.5574163)
+texture = ExtResource("1_ivdc3")
+
+[node name="botaoIgnorarEaprovar" type="Button" parent="." unique_id=1110433152]
+offset_left = 513.0
+offset_top = 372.0
+offset_right = 666.0
+offset_bottom = 399.0
+script = ExtResource("2_y4rkw")
+
+[node name="barraVida" type="Sprite2D" parent="." unique_id=1980620440]
+position = Vector2(1004, 108)
+texture = ExtResource("3_y4rkw")
+
+[node name="botaoSinalizarViolocao" type="Button" parent="." unique_id=1132681260]
+offset_left = 513.0
+offset_top = 405.0
+offset_right = 665.0
+offset_bottom = 432.0
+script = ExtResource("5_cupu8")
