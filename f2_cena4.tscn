@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ci01tylg1w70y"]
+
+[ext_resource type="Script" uid="uid://nbpsm2ktwrmd" path="res://f_2_cena_4.gd" id="1_7k832"]
+[ext_resource type="Texture2D" uid="uid://c4r3hpfj1ngax" path="res://framesJogo/frame16.png" id="2_vc6m0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86344"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pb4xl"]
+
+[node name="f2cena4" type="Node2D" unique_id=691782854]
+script = ExtResource("1_7k832")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1553363731]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_vc6m0")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=187221313]
+offset_left = 359.0
+offset_top = 537.0
+offset_right = 608.0
+offset_bottom = 575.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_86344")
+
+[node name="Button2" type="Button" parent="." unique_id=1455615063]
+offset_left = 616.0
+offset_top = 537.0
+offset_right = 878.0
+offset_bottom = 576.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pb4xl")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

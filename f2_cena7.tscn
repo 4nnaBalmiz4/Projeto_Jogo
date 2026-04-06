@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cps8gx00ib5rl"]
+
+[ext_resource type="Texture2D" uid="uid://qbu4bsin8apl" path="res://framesJogo/frame20.png" id="1_vtbot"]
+
+[node name="f2cena7" type="Node2D" unique_id=1240289697]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1266142828]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_vtbot")

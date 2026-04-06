@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bgtutq4onj66e"]
+
+[ext_resource type="Script" uid="uid://da1xknyghv8qy" path="res://f_2_cena_2.gd" id="1_adheo"]
+[ext_resource type="Texture2D" uid="uid://cpu25pquvkdn8" path="res://framesJogo/frame14.png" id="2_5gw7f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfgnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6x4h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ofmi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adheo"]
+bg_color = Color(0.013006397, 0.40653965, 0.4065355, 1)
+
+[node name="f2cena2" type="Node2D" unique_id=1831213471]
+script = ExtResource("1_adheo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2110279664]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_5gw7f")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=1377503465]
+offset_left = 787.0
+offset_top = 215.0
+offset_right = 1072.0
+offset_bottom = 249.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qfgnv")
+
+[node name="Button2" type="Button" parent="." unique_id=1245125542]
+offset_left = 788.0
+offset_top = 287.0
+offset_right = 1072.0
+offset_bottom = 322.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d6x4h")
+
+[node name="Button3" type="Button" parent="." unique_id=1817209142]
+offset_left = 787.0
+offset_top = 356.0
+offset_right = 1072.0
+offset_bottom = 414.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6ofmi")
+
+[node name="BotaoAvancar" type="Button" parent="." unique_id=1883462252]
+offset_left = 716.0
+offset_top = 444.0
+offset_right = 894.0
+offset_bottom = 485.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_adheo")
+text = "AVANÇAR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="BotaoAvancar" to="." method="_on_botao_avancar_pressed"]

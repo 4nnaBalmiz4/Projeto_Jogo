@@ -6,12 +6,15 @@
 [ext_resource type="Script" uid="uid://pm7dj6a13cc2" path="res://sprite_2d_2.gd" id="3_wldc3"]
 [ext_resource type="AudioStream" uid="uid://6ryrrfubvx4v" path="res://framesJogo/descoberta.mp3" id="5_88j85"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wldc3"]
+bg_color = Color(0.05882353, 0.05490196, 0.36862746, 1)
+
 [node name="Node2D" type="Node2D" unique_id=257197493]
 script = ExtResource("1_wldc3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=838988280]
-position = Vector2(580, 326.75)
-scale = Vector2(1.1328125, 1.0711948)
+position = Vector2(576, 324.50003)
+scale = Vector2(1.125, 1.0621933)
 texture = ExtResource("1_j8y8w")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1188318359]
@@ -23,3 +26,13 @@ duracao = 4.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=474208696]
 stream = ExtResource("5_88j85")
+
+[node name="Button" type="Button" parent="." unique_id=1624298478]
+offset_left = 916.0
+offset_top = 554.0
+offset_right = 1102.0
+offset_bottom = 616.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_wldc3")
+text = "PRÓXIMA FASE >>"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

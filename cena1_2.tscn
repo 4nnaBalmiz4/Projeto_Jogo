@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c4wqlmwidtqbf"]
+
+[ext_resource type="Script" uid="uid://cwd6vus5xwtsj" path="res://cena_1_2.gd" id="1_ht5xt"]
+[ext_resource type="Texture2D" uid="uid://57qeg5jjtur0" path="res://framesJogo/monitor.png" id="2_0bwdp"]
+[ext_resource type="Script" uid="uid://dvbyqqjpddsfe" path="res://label.gd" id="3_4ditp"]
+
+[node name="cena1_2" type="Node2D" unique_id=1536271726]
+script = ExtResource("1_ht5xt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=144642545]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_0bwdp")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=967605635]
+offset_left = 659.0
+offset_top = 396.0
+offset_right = 732.0
+offset_bottom = 439.0
+text = ">>"
+
+[node name="Label" type="Label" parent="." unique_id=1592336950]
+offset_left = 475.0
+offset_top = 238.0
+offset_right = 705.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0.0627451, 0.84705883, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "AUDITOR(A), 
+TEMOS NOSSO
+PRIMEIRO CASO"
+horizontal_alignment = 1
+script = ExtResource("3_4ditp")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

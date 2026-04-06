@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bnp1cou80o4mq"]
+
+[ext_resource type="Script" uid="uid://bqlymc145pgn6" path="res://cena_1_3.gd" id="1_c0gqf"]
+[ext_resource type="Texture2D" uid="uid://57qeg5jjtur0" path="res://framesJogo/monitor.png" id="2_b8f84"]
+[ext_resource type="Script" uid="uid://dvbyqqjpddsfe" path="res://label.gd" id="3_kens1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgk2l"]
+bg_color = Color(0.7764706, 0.07058824, 0.09803922, 1)
+
+[node name="cena_1_3" type="Node2D" unique_id=901935366]
+script = ExtResource("1_c0gqf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=817418069]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_b8f84")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=203973799]
+offset_left = 516.0
+offset_top = 403.0
+offset_right = 653.0
+offset_bottom = 438.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_dgk2l")
+text = "INVESTIGAR"
+
+[node name="Label" type="Label" parent="." unique_id=374972148]
+offset_left = 421.0
+offset_top = 171.0
+offset_right = 748.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0.0627451, 0.84705883, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "A BURGUER EXPRESS
+SOFREU UM VAZAMENTO!
+CLIENTES ALEGAM QUE
+NÃO SABIAM QUE SEUS
+DADOS ERAM COLETADOS
+DESSA FORMA."
+horizontal_alignment = 1
+script = ExtResource("3_kens1")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

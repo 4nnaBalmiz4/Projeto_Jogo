@@ -1,7 +1,9 @@
+Sprite2D
+Button
+TextureRect
+Label
 AudioStreamPlayer
 Node
 TextureButton
-Button
-Sprite2D
 AnimatedSprite2D
 ShapeCast2D
