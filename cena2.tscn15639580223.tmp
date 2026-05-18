@@ -75,16 +75,16 @@ offset_top = 556.0
 offset_right = 1096.0
 offset_bottom = 620.0
 
-[node name="diarioFase1" type="Sprite2D" parent="." unique_id=540635415]
-position = Vector2(608, 313)
-scale = Vector2(0.9533965, 0.9057377)
-texture = ExtResource("11_kb7hd")
+[node name="fecharDiario" type="Button" parent="." unique_id=337065099]
+offset_left = 801.0
+offset_top = 19.0
+offset_right = 871.0
+offset_bottom = 85.0
 
-[node name="fecharDiario" type="Button" parent="." unique_id=1078820797]
-offset_left = 777.0
-offset_top = 44.0
-offset_right = 845.0
-offset_bottom = 108.0
+[node name="diarioFase1" type="Sprite2D" parent="." unique_id=939788897]
+position = Vector2(626, 305)
+scale = Vector2(0.9763032, 0.9644809)
+texture = ExtResource("11_kb7hd")
 
 [connection signal="mouse_entered" from="botaoComecar" to="botaoComecar" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="botaoComecar" to="botaoComecar" method="_on_mouse_exited"]

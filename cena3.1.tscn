@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://blfp4vtqixncw"]
+
+[ext_resource type="Texture2D" uid="uid://eabqt4s5c80a" path="res://framesJogo/personagemAchandoSuspeito.png" id="1_1ip3h"]
+[ext_resource type="Script" uid="uid://dnkm8osevb6oi" path="res://cena_3.1.gd" id="1_yd2c6"]
+[ext_resource type="Texture2D" uid="uid://bop2hv232fiet" path="res://framesJogo/botaoContinuar.png" id="3_sjv10"]
+
+[node name="Node2D" type="Node2D" unique_id=915015171]
+script = ExtResource("1_yd2c6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1343347838]
+position = Vector2(581, 326.24997)
+scale = Vector2(1.1367188, 1.0867769)
+texture = ExtResource("1_1ip3h")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1801847717]
+offset_left = 837.99994
+offset_top = 507.99997
+offset_right = 3847.9998
+offset_bottom = 1697.9999
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_sjv10")
+stretch_mode = 0

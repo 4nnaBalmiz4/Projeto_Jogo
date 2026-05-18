@@ -15,4 +15,4 @@ func _on_mouse_exited():
 func _on_pressed():
 	Global.vidas += 1
 	Global.perdeu_vida = true  # ← marca que perdeu vida
-	get_tree().change_scene_to_file("res://cena2.tscn")
+	get_tree().change_scene_to_file("res://cena3.1.tscn")

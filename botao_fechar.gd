@@ -14,4 +14,4 @@ func _on_mouse_exited():
 
 func _on_pressed():
 	Global.perdeu_vida = false  # ← garante que não anima
-	get_tree().change_scene_to_file("res://cena5.tscn")
+	get_tree().change_scene_to_file("res://cena4.1.tscn")

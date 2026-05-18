@@ -8,6 +8,6 @@ script = ExtResource("1_6or7s")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1767110464]
 stream = ExtResource("2_6or7s")
-volume_db = -34.8
+volume_db = -4.039
 pitch_scale = 0.71
 autoplay = true

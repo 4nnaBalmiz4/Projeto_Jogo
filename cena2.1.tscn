@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d2j4sjnvar2sg"]
+
+[ext_resource type="Texture2D" uid="uid://meakfoucxv2p" path="res://framesJogo/diariofase1aberto.png" id="1_b86t2"]
+
+[node name="Node2D" type="Node2D" unique_id=1321614053]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1860715310]
+position = Vector2(574, 319)
+texture = ExtResource("1_b86t2")
