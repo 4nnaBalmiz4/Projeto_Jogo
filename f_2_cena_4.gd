@@ -1,34 +1,41 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 
 func _on_button_pressed() -> void:
+	# CORRETO
+	Global.servidor2_correto = true
 	if SomAcerto:
 		SomAcerto.tocar_acerto()
-	
-	# 2. Pequena pausa para ouvir o som do acerto
 	await get_tree().create_timer(0.2).timeout
-	
-	# 3. Muda para a cena de sucesso
 	get_tree().change_scene_to_file("res://f2_cena2.tscn")
 
 
 func _on_button_2_pressed() -> void:
+	# ERRADO
+	Global.servidor2_correto = false
+	if Global.perder_vida():
+		return
 	if SomErro:
 		SomErro.tocar_erro()
-	
-	# 2. Atualiza a lógica global do seu jogo
-	Global.vidas += 1
-	Global.perdeu_vida = true
-	
-	# 3. Pequena pausa (0.2s) para o áudio não ser cortado bruscamente
-	await get_tree().create_timer(0.2).timeout
+	_piscar_tela_vermelha()
+	await get_tree().create_timer(0.6).timeout
+	get_tree().change_scene_to_file("res://f2_cena2.tscn")
+
+
+func _piscar_tela_vermelha() -> void:
+	var canvas = CanvasLayer.new()
+	add_child(canvas)
+	var flash = ColorRect.new()
+	flash.color = Color(1, 0, 0, 0.45)
+	flash.set_anchors_preset(Control.PRESET_FULL_RECT)
+	canvas.add_child(flash)
+	var tween = create_tween()
+	tween.tween_property(flash, "modulate:a", 0.0, 0.35)
+	await tween.finished
+	canvas.queue_free()

@@ -19,8 +19,8 @@ func _on_pressed():
 		SomErro.tocar_erro()
 	
 	# 2. Atualiza a lógica global do seu jogo
-	Global.vidas += 1
-	Global.perdeu_vida = true
+	if Global.perder_vida():
+		return
 	
 	# 3. Pequena pausa (0.2s) para o áudio não ser cortado bruscamente
 	await get_tree().create_timer(0.2).timeout

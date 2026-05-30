@@ -1,10 +1,34 @@
 [gd_scene format=3 uid="uid://jchm37vdkr70"]
 
-[ext_resource type="Texture2D" uid="uid://cfytolpcdl4ry" path="res://framesJogo/frame21.png" id="1_g6ilu"]
+[ext_resource type="Texture2D" uid="uid://d27s1bfh2waeb" path="res://framesJogo/fundoCard.png" id="1_cstmy"]
+[ext_resource type="Script" uid="uid://dytkb3ve2d1e7" path="res://f_2_cena_8.gd" id="1_vvfcd"]
+[ext_resource type="Texture2D" uid="uid://fixnh1k1k6wm" path="res://framesJogo/cardFase2.png" id="2_iuwkg"]
+[ext_resource type="Script" uid="uid://br2jcjvfsxmqf" path="res://card_fase_2.gd" id="3_iuwkg"]
+[ext_resource type="Texture2D" uid="uid://bop2hv232fiet" path="res://framesJogo/botaoContinuar.png" id="5_2wqbj"]
+[ext_resource type="AudioStream" uid="uid://6ryrrfubvx4v" path="res://framesJogo/descoberta.mp3" id="6_2pega"]
 
 [node name="f2_cena8" type="Node2D" unique_id=216883322]
+script = ExtResource("1_vvfcd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=99198972]
 position = Vector2(576, 324)
 scale = Vector2(1.125, 1.076412)
-texture = ExtResource("1_g6ilu")
+texture = ExtResource("1_cstmy")
+
+[node name="CardFase2" type="Sprite2D" parent="." unique_id=224034928]
+position = Vector2(568, 328)
+scale = Vector2(1.085, 1.085)
+texture = ExtResource("2_iuwkg")
+script = ExtResource("3_iuwkg")
+duracao = 4.0
+
+[node name="botaoContinuar" type="TextureButton" parent="." unique_id=1914013681]
+offset_left = 882.0
+offset_top = 518.0
+offset_right = 2162.0
+offset_bottom = 1026.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("5_2wqbj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=338696673]
+stream = ExtResource("6_2pega")

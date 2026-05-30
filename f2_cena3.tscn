@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3sadp88ac3io"]
 
-[ext_resource type="Texture2D" uid="uid://d0swqgr3htrjy" path="res://framesJogo/frame15.png" id="1_cv2vo"]
 [ext_resource type="Script" uid="uid://bfxfot3l6csog" path="res://f_2_cena_3.gd" id="1_u55ay"]
+[ext_resource type="Texture2D" uid="uid://4hxiq74ltquv" path="res://framesJogo/Frame2Fase2.png" id="2_u55ay"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t5oh3"]
 
@@ -11,14 +11,20 @@ script = ExtResource("1_u55ay")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1509728599]
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_cv2vo")
+texture = ExtResource("2_u55ay")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="." unique_id=1895202880]
-offset_left = 462.0
-offset_top = 533.0
-offset_right = 792.0
-offset_bottom = 574.0
+[node name="botaoConfirmar" type="Button" parent="." unique_id=1895202880]
+offset_left = 616.0
+offset_top = 538.0
+offset_right = 902.0
+offset_bottom = 579.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_t5oh3")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="botaoCortarConexão" type="Button" parent="." unique_id=2063236195]
+offset_left = 350.0
+offset_top = 535.0
+offset_right = 608.0
+offset_bottom = 581.0
+
+[connection signal="pressed" from="botaoConfirmar" to="." method="_on_button_pressed"]

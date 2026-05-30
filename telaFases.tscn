@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bw8vaf76okqpj"]
+
+[ext_resource type="VideoStream" uid="uid://j6s02hqchmqn" path="res://framesJogo/videoTelaFases.ogv" id="1_pib74"]
+[ext_resource type="Script" uid="uid://b5kwk6j11hk7i" path="res://tela_fases.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://bjxfh8l3qye7" path="res://framesJogo/mapaFases.png" id="3_mapa"]
+
+[node name="Node2D" type="Node2D" unique_id=1764006890]
+script = ExtResource("2_script")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=473028150]
+offset_left = -6.0
+offset_top = -16.0
+offset_right = 3810.6665
+offset_bottom = 2197.3333
+scale = Vector2(0.62, 0.62)
+stream = ExtResource("1_pib74")
+autoplay = true
+
+[node name="MapaFases" type="Sprite2D" parent="." unique_id=1237793195]
+position = Vector2(574.99994, 327)
+scale = Vector2(1.1386718, 1.153846)
+texture = ExtResource("3_mapa")
+
+[node name="BotaoFase2" type="Button" parent="MapaFases" unique_id=617112282]
+offset_left = 173.88684
+offset_top = 23.40001
+offset_right = 233.60559
+offset_bottom = 67.60002
+
+[node name="BotaoFase1" type="Button" parent="MapaFases" unique_id=2029813565]
+offset_left = 99.0
+offset_top = 145.0
+offset_right = 156.0
+offset_bottom = 186.0

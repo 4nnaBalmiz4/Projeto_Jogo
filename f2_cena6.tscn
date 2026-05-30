@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://nk60usyuqg1y"]
 
-[ext_resource type="Texture2D" uid="uid://y2v0shbuo4xl" path="res://framesJogo/frame19.png" id="1_k77wh"]
 [ext_resource type="Script" uid="uid://fkmi0j2lcrgy" path="res://f_2_cena_6.gd" id="1_o2mto"]
+[ext_resource type="Texture2D" uid="uid://gtm2yoiqj62t" path="res://framesJogo/Frame4Fase2.png" id="2_o2mto"]
+[ext_resource type="AudioStream" uid="uid://b1avjk4mem02e" path="res://framesJogo/comemoração.mp3" id="3_nly1o"]
 
 [node name="f2cena6" type="Node2D" unique_id=377705893]
 script = ExtResource("1_o2mto")
@@ -9,7 +10,7 @@ script = ExtResource("1_o2mto")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1645938792]
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_k77wh")
+texture = ExtResource("2_o2mto")
 
 [node name="Button" type="Button" parent="." unique_id=1540797194]
 offset_left = 1041.0
@@ -17,5 +18,8 @@ offset_top = 577.0
 offset_right = 1136.0
 offset_bottom = 631.0
 text = ">>"
+
+[node name="comemoração" type="AudioStreamPlayer" parent="." unique_id=1653870233]
+stream = ExtResource("3_nly1o")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

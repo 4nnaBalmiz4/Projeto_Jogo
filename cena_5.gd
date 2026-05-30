@@ -11,12 +11,25 @@ var imagens_vida = [
 @onready var barra = $barraVida
 
 func _ready():
-	barra.texture = imagens_vida[Global.vidas]
+	atualizar_barra_vida()
+
 	if Global.perdeu_vida:
 		_animar_perda_vida()
 		Global.perdeu_vida = false
-	if Global.vidas >= 5:
-		get_tree().change_scene_to_file("res://gameOver.tscn")
+
+
+func _process(delta: float) -> void:
+	if Global.perdeu_vida:
+		Global.perdeu_vida = false
+		atualizar_barra_vida()
+		_animar_perda_vida()
+		if Global.vidas >= 4:
+			Global.game_over()
+
+
+func atualizar_barra_vida():
+	var indice = clamp(Global.vidas, 0, imagens_vida.size() - 1)
+	barra.texture = imagens_vida[indice]
 
 func _animar_perda_vida():
 	var tween = create_tween()

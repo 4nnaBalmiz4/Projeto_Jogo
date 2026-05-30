@@ -21,15 +21,11 @@ var imagens_vida = [
 @onready var fechar_diario = $fecharDiario
 
 func _ready():
-
-	barra.texture = imagens_vida[Global.vidas]
+	atualizar_barra_vida()
 
 	if Global.perdeu_vida:
 		_animar_perda_vida()
 		Global.perdeu_vida = false
-
-	if Global.vidas >= 5:
-		get_tree().change_scene_to_file("res://gameOver.tscn")
 
 	missao.modulate.a = 0.0
 	missao_politica.modulate.a = 0.0
@@ -47,7 +43,6 @@ func _ready():
 	fechar_notificacao.pressed.connect(_fechar_notificacao_diario)
 	abrir_diario.pressed.connect(_abrir_diario)
 	fechar_diario.pressed.connect(_fechar_diario)
-
 	abrir_diario.mouse_entered.connect(_mostrar_botao_diario)
 	abrir_diario.mouse_exited.connect(_esconder_botao_diario)
 
@@ -60,23 +55,48 @@ func _ready():
 		await get_tree().create_timer(1.2).timeout
 		_mostrar_missao()
 
-	# 🔥 NOTIFICAÇÃO CONTROLADA PELO GLOBAL
+	# NOTIFICAÇÃO DIÁRIO
 	await get_tree().create_timer(2.0).timeout
 
 	if not Global.diario_ja_visto:
 		_mostrar_notificacao_diario()
 	else:
-		# se já viu, libera direto o botão + exclamação
 		abrir_diario.visible = true
 		exclamacao.visible = false
 
+
+func _process(delta: float) -> void:
+	if Global.perdeu_vida:
+		Global.perdeu_vida = false
+		atualizar_barra_vida()
+		_animar_perda_vida()
+		if Global.vidas >= 4:
+			Global.game_over()
+
+
+# ===== VIDA =====
+
+func atualizar_barra_vida():
+	var indice = clamp(Global.vidas, 0, imagens_vida.size() - 1)
+	barra.texture = imagens_vida[indice]
+
+func _animar_perda_vida():
+	var tween = create_tween()
+	tween.tween_property(barra, "modulate:a", 0.0, 0.1)
+	tween.tween_property(barra, "modulate:a", 1.0, 0.1)
+	tween.tween_property(barra, "modulate:a", 0.0, 0.1)
+	tween.tween_property(barra, "modulate:a", 1.0, 0.1)
+	tween.tween_property(barra, "modulate:a", 0.0, 0.1)
+	tween.tween_property(barra, "modulate:a", 1.0, 0.1)
+
+
+# ===== NOTIFICAÇÃO DIÁRIO =====
 
 func _mostrar_notificacao_diario():
 	var som = AudioStreamPlayer.new()
 	som.stream = preload("res://framesJogo/somNotificação.mp3")
 	add_child(som)
 	som.play()
-
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(notificacao_diario, "modulate:a", 1.0, 0.4)
@@ -84,20 +104,13 @@ func _mostrar_notificacao_diario():
 
 
 func _fechar_notificacao_diario():
-
-	# 🔥 MARCA COMO VISTO
 	Global.diario_ja_visto = true
-
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(notificacao_diario, "modulate:a", 0.0, 0.3)
 	tween.tween_property(fechar_notificacao, "modulate:a", 0.0, 0.3)
-
 	await get_tree().create_timer(0.3).timeout
-
 	_iniciar_piscar_exclamacao()
-
-	# ATIVA BOTÃO DO DIÁRIO
 	abrir_diario.visible = true
 
 
@@ -114,16 +127,13 @@ func _iniciar_piscar_exclamacao():
 func _mostrar_botao_diario():
 	abrir_diario.modulate.a = 1.0
 
-
 func _esconder_botao_diario():
 	abrir_diario.modulate.a = 0.3
-
 
 func _abrir_diario():
 	diario.visible = true
 	fechar_diario.visible = true
 	exclamacao.visible = false
-
 
 func _fechar_diario():
 	diario.visible = false
@@ -137,10 +147,8 @@ func _mostrar_missao():
 	som.stream = preload("res://framesJogo/somNotificação.mp3")
 	add_child(som)
 	som.play()
-
 	var tween = create_tween()
 	tween.tween_property(missao, "modulate:a", 1.0, 0.5)
-
 
 func _mostrar_missao_politica():
 	var som = AudioStreamPlayer.new()
@@ -149,15 +157,3 @@ func _mostrar_missao_politica():
 	som.play()
 	var tween = create_tween()
 	tween.tween_property(missao_politica, "modulate:a", 1.0, 0.5)
-
-
-# ===== VIDA =====
-
-func _animar_perda_vida():
-	var tween = create_tween()
-	tween.tween_property(barra, "modulate:a", 0.0, 0.1)
-	tween.tween_property(barra, "modulate:a", 1.0, 0.1)
-	tween.tween_property(barra, "modulate:a", 0.0, 0.1)
-	tween.tween_property(barra, "modulate:a", 1.0, 0.1)
-	tween.tween_property(barra, "modulate:a", 0.0, 0.1)
-	tween.tween_property(barra, "modulate:a", 1.0, 0.1)

@@ -10,6 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_button_pressed() -> void:
-	get_tree().changeget_tree().change_scene_to_file("res://f2_cena2.tscn")
+	get_tree().change_scene_to_file("res://f2_cena8.tscn")

@@ -3,15 +3,16 @@
 [ext_resource type="Script" uid="uid://da1xknyghv8qy" path="res://f_2_cena_2.gd" id="1_adheo"]
 [ext_resource type="Texture2D" uid="uid://cpu25pquvkdn8" path="res://framesJogo/frame14.png" id="2_5gw7f"]
 [ext_resource type="Texture2D" uid="uid://cmijsr5wklke5" path="res://framesJogo/barraVidaCompleta 1.png" id="3_5gw7f"]
+[ext_resource type="Texture2D" uid="uid://dpneli36ifvx7" path="res://iconeDiario.png" id="4_y7nr8"]
+[ext_resource type="Texture2D" uid="uid://b2m8xuylqya3r" path="res://notificaçãoDiario.png" id="5_1i0pa"]
+[ext_resource type="Texture2D" uid="uid://b0pvhs1a41hs0" path="res://exclamação.png" id="6_i7qci"]
+[ext_resource type="Texture2D" uid="uid://bx0btiivn57hr" path="res://framesJogo/diarioFase2.png" id="7_u8jsu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfgnv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6x4h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ofmi"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adheo"]
-bg_color = Color(0.013006397, 0.40653965, 0.4065355, 1)
 
 [node name="f2cena2" type="Node2D" unique_id=1831213471]
 script = ExtResource("1_adheo")
@@ -22,40 +23,69 @@ offset_bottom = 648.0
 texture = ExtResource("2_5gw7f")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="." unique_id=1377503465]
+[node name="botaoServidor1" type="Button" parent="." unique_id=1377503465]
 offset_left = 787.0
 offset_top = 215.0
 offset_right = 1072.0
 offset_bottom = 249.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qfgnv")
 
-[node name="Button2" type="Button" parent="." unique_id=1245125542]
+[node name="botaoServidor2" type="Button" parent="." unique_id=1245125542]
 offset_left = 788.0
 offset_top = 287.0
 offset_right = 1072.0
 offset_bottom = 322.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d6x4h")
 
-[node name="Button3" type="Button" parent="." unique_id=1817209142]
+[node name="botaoServidor3" type="Button" parent="." unique_id=1817209142]
 offset_left = 787.0
 offset_top = 356.0
 offset_right = 1072.0
 offset_bottom = 414.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6ofmi")
 
-[node name="BotaoAvancar" type="Button" parent="." unique_id=1883462252]
-offset_left = 716.0
-offset_top = 444.0
-offset_right = 894.0
-offset_bottom = 485.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_adheo")
-text = "AVANÇAR"
-
 [node name="barraVida" type="Sprite2D" parent="." unique_id=1756370360]
 position = Vector2(174, 80)
 texture = ExtResource("3_5gw7f")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="BotaoAvancar" to="." method="_on_botao_avancar_pressed"]
+[node name="iconeDiário" type="Sprite2D" parent="." unique_id=1735360840]
+position = Vector2(1061, 588)
+scale = Vector2(0.29245278, 0.2833499)
+texture = ExtResource("4_y7nr8")
+
+[node name="notificaçãoDiario" type="Sprite2D" parent="." unique_id=1893759137]
+position = Vector2(1059, 463)
+scale = Vector2(0.551661, 0.5310367)
+texture = ExtResource("5_1i0pa")
+
+[node name="exclamação" type="Sprite2D" parent="." unique_id=715952761]
+position = Vector2(1090.0001, 554)
+scale = Vector2(0.23663548, 0.18132375)
+texture = ExtResource("6_i7qci")
+
+[node name="fecharNotificação" type="Button" parent="." unique_id=1292036499]
+offset_left = 1124.0
+offset_top = 397.0
+offset_right = 1140.0
+offset_bottom = 412.0
+
+[node name="abrirDiario" type="Button" parent="." unique_id=357732475]
+offset_left = 1027.0
+offset_top = 556.0
+offset_right = 1096.0
+offset_bottom = 620.0
+
+[node name="diarioFase1" type="Sprite2D" parent="." unique_id=691148873]
+position = Vector2(608, 313)
+scale = Vector2(0.9533965, 0.9057377)
+texture = ExtResource("7_u8jsu")
+
+[node name="fecharDiario" type="Button" parent="." unique_id=1452841427]
+offset_left = 777.0
+offset_top = 44.0
+offset_right = 845.0
+offset_bottom = 108.0
+
+[connection signal="pressed" from="botaoServidor1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="botaoServidor2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="botaoServidor3" to="." method="_on_button_3_pressed"]

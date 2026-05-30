@@ -5,9 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c5p3wuf8vjbn0" path="res://framesJogo/card1.png" id="2_7iar6"]
 [ext_resource type="Script" uid="uid://pm7dj6a13cc2" path="res://sprite_2d_2.gd" id="3_wldc3"]
 [ext_resource type="AudioStream" uid="uid://6ryrrfubvx4v" path="res://framesJogo/descoberta.mp3" id="5_88j85"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wldc3"]
-bg_color = Color(0.05882353, 0.05490196, 0.36862746, 1)
+[ext_resource type="Texture2D" uid="uid://bop2hv232fiet" path="res://framesJogo/botaoContinuar.png" id="6_88j85"]
 
 [node name="Node2D" type="Node2D" unique_id=257197493]
 script = ExtResource("1_wldc3")
@@ -27,12 +25,10 @@ duracao = 4.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=474208696]
 stream = ExtResource("5_88j85")
 
-[node name="Button" type="Button" parent="." unique_id=1624298478]
-offset_left = 916.0
-offset_top = 554.0
-offset_right = 1102.0
-offset_bottom = 616.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_wldc3")
-text = "PRÓXIMA FASE >>"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="botaoContinuar" type="TextureButton" parent="." unique_id=1548449184]
+offset_left = 882.0
+offset_top = 518.0
+offset_right = 2162.0
+offset_bottom = 1026.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_88j85")
